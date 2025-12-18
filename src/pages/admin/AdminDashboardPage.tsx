@@ -51,7 +51,7 @@ export function AdminDashboardPage() {
             description: 'Please login to access the admin dashboard',
             duration: 3000,
           });
-          navigate('/admin/login');
+          navigate('/sys-admin-portal-x9k2');
         } else {
           setIsLoading(false);
         }
@@ -60,7 +60,7 @@ export function AdminDashboardPage() {
           description: 'Please login to access the admin dashboard',
           duration: 3000,
         });
-        navigate('/admin/login');
+        navigate('/sys-admin-portal-x9k2');
       }
     };
 
@@ -74,12 +74,12 @@ export function AdminDashboardPage() {
       localStorage.removeItem('refreshToken');
       localStorage.removeItem('userRole');
       toast.success('Logged out successfully');
-      navigate('/admin/login');
+      navigate('/sys-admin-portal-x9k2');
     } catch (error) {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
       localStorage.removeItem('userRole');
-      navigate('/admin/login');
+      navigate('/sys-admin-portal-x9k2');
     }
   };
 

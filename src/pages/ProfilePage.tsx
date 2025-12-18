@@ -108,8 +108,19 @@ export function ProfilePage() {
         }
     };
 
-    const getInitials = (firstname: string, lastname: string) => {
-        return `${firstname.charAt(0)}${lastname.charAt(0)}`.toUpperCase();
+    const getInitials = (firstname?: string, lastname?: string) => {
+        const first = (firstname || '').trim();
+        const last = (lastname || '').trim();
+
+        if (!first && !last) {
+            return '?';
+        }
+
+        const firstInitial = first.charAt(0) || '';
+        const lastInitial = last.charAt(0) || '';
+        const initials = `${firstInitial}${lastInitial}`.toUpperCase();
+
+        return initials || '?';
     };
 
     if (loading) {

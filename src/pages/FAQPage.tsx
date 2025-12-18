@@ -34,7 +34,16 @@ export function FAQPage() {
     try {
       setLoading(true);
       const data = await faqService.getActiveFAQs();
-      setFaqs(data || []);
+
+      if (Array.isArray(data)) {
+        setFaqs(data);
+      } else if (data && Array.isArray((data as any).faqs)) {
+        // Handle wrapped response shapes like { faqs: [...] }
+        setFaqs((data as any).faqs);
+      } else {
+        console.error('Unexpected FAQ response format:', data);
+        setFaqs([]);
+      }
     } catch (error: any) {
       console.error('Failed to load FAQs:', error);
       toast.error('Failed to load FAQs. Please try again later.');
