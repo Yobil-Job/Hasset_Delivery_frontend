@@ -47,7 +47,7 @@ export function VerifyEmailPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4 py-12">
       <SEO title="Verify Email - ሀሴት Delivery" description="Verify your email address for ሀሴት Delivery." />
-      <p><b></>SMTP not available to verify later input 0000 in the verification</p>b></p>
+      <p><b> SMTP not available to verify later input 0000 in the verification </b></p> 
       
       <div className="w-full max-w-lg">
         {/* Logo */}
